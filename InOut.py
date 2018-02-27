@@ -53,5 +53,3 @@ def lectura_problema(nombreFichero):
     config = Configuracion()
     config.setParametrosIniciales(numVideos, numEndpoints, numRequests, numCaches, sizeCache, sizeVideos, matrixLatency, matrixRequests)
     return config
-
-lectura_problema('me_at_the_zoo.in')
