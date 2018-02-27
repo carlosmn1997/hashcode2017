@@ -4,7 +4,7 @@
 
 import heapq
 
-class montCaches:
+class mont_caches:
 
     def __init__(self, lista_caches):
         self.caches = lista_caches
