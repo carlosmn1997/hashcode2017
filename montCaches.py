@@ -10,14 +10,14 @@ class montCaches:
         self.caches = lista_caches
         self.heap = heapq()
         for i in range(0, len(self.caches)):
-            id = self.caches[i].id()
-            prioridad = self.caches[i]
-            self.heap.heappush([prioridad, id])
+            nodo_mejor = self.caches[i].get_best()
+            self.heap.heappush(nodo_mejor)
 
     def get_best(self):
         best = self.heap.heappop()
         id_cache = best[1]
         cache = self.caches[id_cache]
-        cache.save_video()
+        new  = cache.save_video()
+        self.heap.heappush(new)
 
             
