@@ -14,10 +14,16 @@ class montCaches:
             self.heap.heappush(nodo_mejor)
 
     def get_best(self):
-        best = self.heap.heappop()
+        try:
+            best = self.heap.heappop()
+        except:
+            return None
         id_cache = best[1]
         cache = self.caches[id_cache]
         new  = cache.save_video()
-        self.heap.heappush(new)
+        if new != None:
+            self.heap.heappush(new)
+        else:
+            return id_cache
 
             
