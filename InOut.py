@@ -53,3 +53,25 @@ def lectura_problema(nombreFichero):
     config = Configuracion()
     config.setParametrosIniciales(numVideos, numEndpoints, numRequests, numCaches, sizeCache, sizeVideos, matrixLatency, matrixRequests)
     return config
+
+# Se le tiene que pasar 1 parametros, la siguiente matriz: TIENEN QUE SER VALORS ENTEROS
+# filas : numero de caches utilizadas
+# columnas : videos almacenados en cada cache
+# se pone un 1 en la celda correspondiente para almacenar el video
+
+def almacenar_solucion(matrix):
+    fichero_objeto = open("solucion.txt", "w")
+    numCaches = len(matrix)
+    numVideos = len(matrix[0])
+    fichero_objeto.write(str(numCaches)+"\n")
+    for fila in range(len(matrix)):
+        if 1 in matrix[fila]:
+            fichero_objeto.write(str(numCaches)+" ")
+            for columna in range(numVideos):
+                contenido = matrix[fila][columna]
+                if (contenido != 0):
+                    fichero_objeto.write(str(columna)+" ")
+            fichero_objeto.write("\n")
+    fichero_objeto.close()
+
+#almacenar_solucion([[1, 0, 0, 0], [0, 0, 1, 1], [0, 0, 0, 0]])
