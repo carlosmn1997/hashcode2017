@@ -74,4 +74,8 @@ def almacenar_solucion(matrix):
             fichero_objeto.write("\n")
     fichero_objeto.close()
 
+# def sacarPuntuacion(matrix, config):
+#     total = 0
+
+
 #almacenar_solucion([[1, 0, 0, 0], [0, 0, 1, 1], [0, 0, 0, 0]])
