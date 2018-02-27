@@ -4,6 +4,7 @@
 
 import numpy as np
 
+
 class Configuracion:
     n_videos = 0
     n_epoints = 0
